@@ -4,13 +4,13 @@
   "description": "Data Labeling Tool that is backend agnostic and can be embedded into your applications",
   "homepage": "https://labelstud.io",
   "author": {
-    "name": "Heartex Labs",
-    "url": "https://github.com/heartexlabs"
+    "name": "ygcedu",
+    "url": "https://github.com/ygcedu"
   },
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/heartexlabs/label-studio-frontend.git"
+    "url": "https://github.com/ygcedu/label-studio-frontend.git"
   },
   "browser": "build/static/js/main.js",
   "main": "build/static/js/main.js",
@@ -30,6 +30,7 @@
     "antd": "^4.3.3",
     "array-move": "^1.0.0",
     "codeceptjs": "^2.6.3",
+    "cross-env": "^7.0.3",
     "emoji-regex": "^7.0.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
@@ -70,10 +71,10 @@
   },
   "scripts": {
     "build-bundle": "npm run build:final",
-    "build-notsourcemap": "GENERATE_SOURCEMAP=false npm run build",
-    "build:final": "BUILD_NO_CHUNKS=true npm run build",
-    "build:no-hash": "BUILD_NO_HASH=true BUILD_NO_CHUNKS=true npm run build",
-    "build:module": "BUILD_MODULE=true npm run build:no-hash",
+    "build-notsourcemap": "cross-env GENERATE_SOURCEMAP=false npm run build",
+    "build:final": "cross-env BUILD_NO_CHUNKS=true npm run build",
+    "build:no-hash": "cross-env BUILD_NO_HASH=true BUILD_NO_CHUNKS=true npm run build",
+    "build:module": "cross-env BUILD_MODULE=true npm run build:no-hash",
     "build": "react-app-rewired build",
     "copy-examples": "bash scripts/copy.sh",
     "eject": "react-scripts eject",
