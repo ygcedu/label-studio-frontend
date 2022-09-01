@@ -134,10 +134,14 @@ const labelToSVG = (function() {
     svgText.innerHTML = text;
 
     svg.appendChild(svgText);
-    document.body.appendChild(svg);
+    // 如果 body 设置了 flex，会导致添加的 svg 元素宽度被撑开
+    // document.body.appendChild(svg);
+    const temp = document.createElement("div");
+    temp.appendChild(svg);
+    document.body.appendChild(temp);
 
     const textLen = svg.getBoundingClientRect().width;
-    svg.remove();
+    temp.remove();
 
     return textLen;
   }
