@@ -8,7 +8,7 @@ if [ -z $1 ]; then
 fi
 
 VERSION=$1
-COMPANY="heartexlabs"
+COMPANY="gcyuan"
 REPO="label-studio"
 
 # Colors for colored output
@@ -16,7 +16,7 @@ GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
 # Just to be sure
-git checkout master
+git checkout v$VERSION
 git pull
 
 # Create new build
